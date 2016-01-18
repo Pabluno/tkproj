@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+	<div class="jumbotron">
+		{% if user.is_authenticated %}
+			<p>Hi, {{ user.username }}! </p>
+		{% else %}
+
+		<p>Welcome to our site.
+		This site was made with <a href="http://djangoproject...">
+		<p style="margin-top: 1em">
+			<a href="{% url 'games_login' %}">Click here to login</a> or <a href="{% url 'account_signup' %}"> Sign up </a>
+		</p>
+		{% endif %}
+	</div>  
+{% endblock content %}
+
+	
+		
